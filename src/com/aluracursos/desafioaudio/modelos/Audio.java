@@ -1,11 +1,19 @@
 package com.aluracursos.desafioaudio.modelos;
 
 public class Audio {
-    String titulo;
-    int duracion;
-    int totalDeReproducciones;
-    int meGusta = 0;
-    int clasificacion;
+    private String titulo;
+    private int duracion;
+    private int totalDeReproducciones = 0;
+    private int totalDeMeGusta = 0;
+    private int clasificacion;
+
+    public void meGusta(){
+        this.totalDeMeGusta++;
+    }
+
+    public void reproducir(){
+        this.totalDeReproducciones++;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -32,11 +40,11 @@ public class Audio {
     }
 
     public int getMeGusta() {
-        return meGusta;
+        return totalDeMeGusta;
     }
 
     public void setMeGusta(int meGusta) {
-        this.meGusta = meGusta;
+        this.totalDeMeGusta = meGusta;
     }
 
     public int getClasificacion() {
@@ -47,13 +55,7 @@ public class Audio {
         this.clasificacion = clasificacion;
     }
 
-    public void meGusta(){
-        meGusta++;
-    }
 
-    public void reproducir(){
-        System.out.println("Reproduciendo...");
-    }
 
 
 }
